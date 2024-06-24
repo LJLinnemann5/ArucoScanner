@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FileVersion>1.0.0.0</FileVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{acc365d7-c23b-45fd-9795-e429f4d3820d}</ProjectGuid>
+    <SubObjectsSortedByName>True</SubObjectsSortedByName>
+    <DownloadApplicationInfo>true</DownloadApplicationInfo>
+    <WriteProductVersion>true</WriteProductVersion>
+    <GenerateTpy>false</GenerateTpy>
+    <Name>ArucoScanner</Name>
+    <ProgramVersion>3.1.4024.0</ProgramVersion>
+    <Application>{5e8a1849-79ec-42ae-bac1-736828e2adf8}</Application>
+    <TypeSystem>{33fef7e8-4d86-43a6-bf93-8a9c81b76048}</TypeSystem>
+    <Implicit_Task_Info>{81e5e013-e876-4edf-b571-591b252ceddb}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{05e77a69-068a-45e6-86b2-004e88cc42ee}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{8f6f7c22-0af2-4caf-8fe4-4909d83e4867}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{5a4aa419-ded3-4709-90f4-e188f2736dd1}</LibraryReferences>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DUTs" />
+    <Folder Include="GVLs" />
+    <Folder Include="VISUs" />
+    <Folder Include="POUs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="Tc2_Standard">
+      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Standard</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Module">
+      <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Module</Namespace>
+    </PlaceholderReference>
+  </ItemGroup>
+</Project>
