@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
+	<LicenseInfo>
+		<SystemId>{95A8E0F5-3E4A-31CE-BD3E-A5C56D226794}</SystemId>
+		<IssueTime>2024-06-24T18:36:00</IssueTime>
+		<ExpireTime>2024-07-02T00:00:00</ExpireTime>
+		<LicenseKey>651a6a34a59ed620f5ee778ee250f296a8289a0616565788fe793b42659d190d9b9219bdb1d3d7e671f4be6aabfd02db84e1af3e38ce52afb6baceb1228bb0539bb473673b0106b5b7c89560691a0494e0910d067d6b1ca1182670cc84b89aa373a28c80df1e7686e31098ef8bee5a99b78c387fcebb1e0b1eab857e9f4f2742893f223e0b6e766b0630bac0e69a1df51430cfa17ec4fceeace4f0af5ba3c9c766fa96f3e17051cd34cfcb285026e3fa8fcf849de28018353affc798df0c68099e1ce53fc7f7e8989a578fd80143aad01eb4e61e6cddf0c7a43eebe6b67db63c80115ac955c29ce003e7b05349fb745cd4932d5fab7fbd3d05678e3717ed9e12</LicenseKey>
+		<License>
+			<LicenseId>{4C256767-E6E6-4AF5-BD68-9F7ABAD0C200}</LicenseId>
+			<Name>TC3 ADS</Name>
+			<OrderNo>TC1000</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{3FF18E97-7754-401B-93FB-70544DE28A13}</LicenseId>
+			<Name>TC3 IO</Name>
+			<OrderNo>TC1100</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{66689887-CCBD-452C-AC9A-039D997C6E66}</LicenseId>
+			<Name>TC3 PLC</Name>
+			<OrderNo>TC1200</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{2C358067-6E81-4F6A-B8D9-AC1F63FEB6FD}</LicenseId>
+			<Name>TC3 Vision Base</Name>
+			<OrderNo>TF7100</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{2FF93140-10E2-4662-A464-31B8A4673F26}</LicenseId>
+			<Name>TC3 GigE Vision Connector</Name>
+			<Instances>2</Instances>
+		</License>
+		<License>
+			<LicenseId>{081AC839-28D0-49CA-9792-72680E1F3249}</LicenseId>
+			<Name>TC3 TCP/UDP RT</Name>
+			<OrderNo>TF6311</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{B1065A48-8131-4608-A378-D67FA8BD826E}</LicenseId>
+			<Name>TC3 GigE Vision Connector Base</Name>
+			<OrderNo>TF7000</OrderNo>
+		</License>
+	</LicenseInfo>
+</TcLicenseInfo>

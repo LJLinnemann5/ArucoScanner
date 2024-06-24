@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ImageDataTest" Id="{8799ff32-8fda-4f49-9bbf-f7659386fb4e}">
+    <Declaration><![CDATA[TYPE ImageDataTest :
+STRUCT
+    data : ARRAY [0..307200] OF BYTE; // for a 640x480 grayscale image
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

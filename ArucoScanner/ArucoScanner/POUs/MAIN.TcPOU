@@ -1,13 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1">
-  <POU Name="MAIN" Id="{7df89916-5b7e-4f10-aae8-92fef7c4d085}">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{7df89916-5b7e-4f10-aae8-92fef7c4d085}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-END_VAR
-]]>
-    </Declaration>
+	hr 							: HRESULT;
+	fbCamera 					: FB_VN_SimpleCameraControl;
+	eState 						: ETcVnCameraState;
+	ipImageIn		    		: ITcVnImage;
+	ipProcessedImage    		: ITcVnImage;
+	ipImageInDisplay 			: ITcVnDisplayableImage;
+	ipProcessedImageToDisplay 	: ITcVnDisplayableImage;
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[eState := fbCamera.GetState();
+
+IF eState = TCVN_CS_ERROR THEN
+	hr := fbCamera.Reset();
+	
+	ELSIF eState < TCVN_CS_ACQUIRING THEN
+		hr := fbCamera.StartAcquisition();
+		
+		ELSIF eState = TCVN_CS_ACQUIRING THEN
+			hr := fbCamera.GetCurrentImage(ipImageIn);
+			
+			IF SUCCEEDED(hr) AND ipImageIn <> 0 THEN
+				hr := F_VN_Threshold(
+				ipSrcImage      :=  ipImageIn,
+				ipDestImage     :=  ipProcessedImage,
+				fThreshold      :=  128, // half value range: (2^8)/2=128
+				fMaxValue       :=  255, // max value of 8-bit image: (2^8)-1=255
+				eThresholdType  :=  TCVN_TT_BINARY,
+				hrPrev          :=  hr
+			);
+			hr := F_VN_TransformIntoDisplayableImage(ipProcessedImage, ipProcessedImageToDisplay, hr); //threshold Image
+			hr := F_VN_TransformIntoDisplayableImage(ipImageIn, ipImageInDisplay, hr);        // raw image
+			END_IF
+END_IF]]></ST>
     </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="5" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="46" Count="6" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="53" Count="1" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="35" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
